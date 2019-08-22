@@ -95,7 +95,7 @@
             toasts[maxOpened - 1].open.resolve();
           }
           if (lastToast()) {
-            if (toast.scope.toastType === 'toast-error' || toast.scope.toastType === 'toast-warning') {
+            if (toast.scope.extraData.centerPositionToast || toast.scope.toastType === 'toast-error' || toast.scope.toastType === 'toast-warning') {
               topCenterContainer.remove();
               topCenterContainer = null;
               deferTopCenterContainer = $q.defer();
@@ -141,7 +141,7 @@
     }
 
     function _createOrGetContainer(options, toastType) {
-      if (toastType === 'toast-error' || toastType === 'toast-warning') {
+      if (options.extraData.centerPositionToast || toastType === 'toast-error' || toastType === 'toast-warning') {
         if(topCenterContainer) { return deferTopCenterContainer.promise; }
 
         topCenterContainer = angular.element('<div></div>');
@@ -206,7 +206,7 @@
         _createOrGetContainer(options, map.iconClass).then(function() {
           newToast.isOpened = true;
           if (options.newestOnTop) {
-            if (map.iconClass === 'toast-error' || map.iconClass === 'toast-warning') {
+            if (options.extraData.centerPositionToast || map.iconClass === 'toast-error' || map.iconClass === 'toast-warning') {
               $animate.enter(newToast.el, topCenterContainer).then(function() {
                 newToast.scope.init();
               });
@@ -216,7 +216,7 @@
               });
             }
           } else {
-            if (map.iconClass === 'toast-error' || map.iconClass === 'toast-warning') {
+            if (options.extraData.centerPositionToast || map.iconClass === 'toast-error' || map.iconClass === 'toast-warning') {
               var sibling = topCenterContainer[0].lastChild ? angular.element(topCenterContainer[0].lastChild) : null;
               $animate.enter(newToast.el, topCenterContainer, sibling).then(function() {
                 newToast.scope.init();

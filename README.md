@@ -1,3 +1,20 @@
+## Custom Toast Position
+The library did not support position toast at different positions.
+Added an additional toast container (for center position toast).
+
+__Default Configuration__
+*error* and *warning* toast messages occupy the **center position**.
+*success* and *info* toast messages occupy the position mentioned in the config (**top right**).
+
+__Change Toast Position__
+It is possible to change the position of toast to center (as shown below)
+```javascript
+toastr.info('info toast', 'test toast', {
+    extraData: {centerPositionToast: true}
+});
+```
+___
+
 # Angular Toastr
 
 [![Code Climate](https://codeclimate.com/github/Foxandxss/angular-toastr.png)](https://codeclimate.com/github/Foxandxss/angular-toastr) [![Build Status](https://travis-ci.org/Foxandxss/angular-toastr.svg?branch=master)](https://travis-ci.org/Foxandxss/angular-toastr) [![devDependency Status](https://david-dm.org/Foxandxss/angular-toastr/dev-status.svg)](https://david-dm.org/Foxandxss/angular-toastr#info=devDependencies)

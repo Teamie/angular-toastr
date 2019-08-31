@@ -9,6 +9,9 @@
       closeHtml: '<button>&times;</button>',
       containerId: 'toast-container',
       extendedTimeOut: 1000,
+      extraData: {
+        centerPositionToast: false
+      },
       iconClasses: {
         error: 'toast-error',
         info: 'toast-info',

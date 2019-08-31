@@ -1,3 +1,20 @@
+## Custom Toast Position
+The library did not support position toast at different positions.
+Added an additional toast container (for center position toast).
+
+__Default Configuration__
+*error* and *warning* toast messages occupy the **center position**.
+*success* and *info* toast messages occupy the position mentioned in the config (**top right**).
+
+__Change Toast Position__
+It is possible to change the position of toast to center (as shown below)
+```javascript
+toastr.info('info toast', 'test toast', {
+    extraData: {centerPositionToast: true}
+});
+```
+___
+
 # Angular Toastr
 
 **This project needs new maintainers. I cannot maintain it anymore, I don't do more AngularJS and I don't have the time for it anymore, please send an email or open an issue if you wish to maintain it**

@@ -99,10 +99,20 @@
               topCenterContainer.remove();
               topCenterContainer = null;
               deferTopCenterContainer = $q.defer();
+              if (container !== null) {
+                container.remove();
+                container = null;
+                containerDefer = $q.defer();
+              }
             } else {
               container.remove();
               container = null;
               containerDefer = $q.defer();
+              if (topCenterContainer !== null) {
+                topCenterContainer.remove();
+                topCenterContainer = null;
+                deferTopCenterContainer = $q.defer();
+              }
             }
           }
         });
